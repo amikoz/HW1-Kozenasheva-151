@@ -93,7 +93,7 @@ def meta_data(path, author, header, date, link, year):
 
 def main():
     commonUrl = 'http://velizhnov.ru/article/'
-    for i in range(90000, 114764):
+    for i in range(105000, 108000):
         pageUrl = commonUrl + str(i)
         text = download_page(pageUrl)
         if text != 'unavailable page':
