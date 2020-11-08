@@ -1,0 +1,23 @@
+import os, re
+def opening():
+    for root, dirs, files in os.walk('.\\thai_pages'):
+        for f in files:
+            g = open(root + os.sep + f, 'r', encoding = 'utf-8')
+            g1 = g.read()
+            return g1
+def dictionary(g1):
+    d = {}
+    for regex in g1:
+        regex = re.compile('<a href=\'/id/.+?\'>(.+?)</a>')
+        m1 = regex.findall(g1)
+        regex2 = re.compile('<td class=pos>example sentence</td><td>(.+?)</td></tr><tr><td class=th>')
+        m2 = regex2.findall(g1)
+        print(m1, m2)
+
+
+        
+def main():
+    a = opening()
+    dictionary(a)
+
+
